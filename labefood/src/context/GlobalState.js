@@ -1,4 +1,4 @@
-import { Router } from "../routes/Router"
+// import Router  from "../Routes/Router"
 import { GlobalStateContext } from "./Context";
 
 export const GlobalState = (props) => {
@@ -9,7 +9,7 @@ export const GlobalState = (props) => {
             value={{}}
         >
             {props.children}
-            <Router />
+            {/* <Router /> */}
         </GlobalStateContext.Provider>
     );
 };
