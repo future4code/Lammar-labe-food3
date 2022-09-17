@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { goToCarrinho } from '../../Routes/Coordinator';
+import { goToCarrinho } from '../../routes/Coordinator';
 
 export const Restaurante = () => {
     const navigate = useNavigate()
@@ -8,7 +8,7 @@ export const Restaurante = () => {
     return (
         <div>
             <>Restaurante</>
-            <button onClick={() => {goToCarrinho(navigate)}}>Carrinho</button>
+            <button onClick={() => { goToCarrinho(navigate) }}>Carrinho</button>
         </div>
     )
 

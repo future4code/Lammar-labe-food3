@@ -1,14 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { goToSignUp } from '../../Routes/Coordinator';
+import { goToSignUp } from '../../routes/Coordinator';
 import axios from "axios";
 import { useForm } from '../../hooks/useForm/useForm';
 import TextField from '@mui/material/TextField';
 import Rappi4 from "../../img/Rappi4.svg"
 
 export const Login = () => {
-    const navigate = useNavigate()
-    const [form, onChange, clear] = useForm({ email: "", password: ""});
+  const navigate = useNavigate()
+  const [form, onChange, clear] = useForm({ email: "", password: "" });
 
     const loginStart = (event) => {
         event.preventDefault();
@@ -67,7 +67,8 @@ export const Login = () => {
             </form>
         </div>
 
-    );
+
+  );
 
 
 }
