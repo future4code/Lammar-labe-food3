@@ -6,6 +6,8 @@ import { Feed } from '../pages/feed/Feed';
 import { MeuCarrinho } from '../pages/meu-carrinho/MeuCarrinho';
 import { Signup } from '../pages/signup/Signup';
 import { Restaurante } from '../pages/restaurante/Restaurante';
+import { EditarCadastro } from '../pages/editar-cadastro/EditarCadastro';
+import { EditarEndereco } from '../pages/editar-endereco/EditarEndereco';
 
 function Router() {
   return (
@@ -17,6 +19,8 @@ function Router() {
             <Route path="/feed" element={ <Feed/> }/>
             <Route path="/carrinho" element={ <MeuCarrinho/> }/>
             <Route path="/restaurante" element={ <Restaurante/> }/>
+            <Route path="/editar-cadastro" element={ <EditarCadastro/> }/>
+            <Route path="/editar-endereco" element={ <EditarEndereco/> }/>
            
         </Routes>
     </BrowserRouter>
