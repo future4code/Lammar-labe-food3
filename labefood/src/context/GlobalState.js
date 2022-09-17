@@ -1,4 +1,7 @@
-// import Router  from "../Routes/Router"
+
+
+import Router  from "../Routes/Router"
+
 import { GlobalStateContext } from "./Context";
 
 export const GlobalState = (props) => {
