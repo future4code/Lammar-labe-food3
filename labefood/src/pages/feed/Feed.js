@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { goToRestaurante } from '../../Routes/Coordinator';
+import { goToRestaurante } from '../../routes/Coordinator';
 
 
 export const Feed = () => {
@@ -9,10 +9,10 @@ export const Feed = () => {
     return (
         <div>
             <>Feed</>
-            <button onClick={() => {goToRestaurante(navigate)}}>Restaurante</button>
+            <button onClick={() => { goToRestaurante(navigate) }}>Restaurante</button>
 
         </div>
-       
+
     )
 
 
