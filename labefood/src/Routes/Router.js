@@ -7,7 +7,7 @@ import { MeuCarrinho } from '../pages/meu-carrinho/MeuCarrinho';
 import { Signup } from '../pages/signup/Signup';
 import { Restaurante } from '../pages/restaurante/Restaurante';
 import { EditarCadastro } from '../pages/editar-cadastro/EditarCadastro';
-import { EditarEndereco } from '../pages/editar-endereco/EditarEndereco';
+
 
 function Router() {
   return (
