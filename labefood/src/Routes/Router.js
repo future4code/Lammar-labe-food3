@@ -20,7 +20,7 @@ function Router() {
             <Route path="/carrinho" element={ <MeuCarrinho/> }/>
             <Route path="/restaurante" element={ <Restaurante/> }/>
             <Route path="/editar-cadastro" element={ <EditarCadastro/> }/>
-            <Route path="/editar-endereco" element={ <EditarEndereco/> }/>
+            
            
         </Routes>
     </BrowserRouter>
