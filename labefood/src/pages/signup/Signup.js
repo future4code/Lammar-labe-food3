@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../img/logo.svg'
+import logo from '../../img/Rappi4.svg'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm/useForm';
 import { goToCadastroEndereco } from '../../routes/Coordinator';
@@ -38,6 +38,8 @@ export const Signup = () => {
                     placeholder="Nome e sobrenome"
                     value={form.nome}
                     onChange={onChange}
+                    pattern="^.{3,}$"
+                    title="Mínimo 3 caracteres"
                     required
                 />
                 <label htmlFor="email">E-mail</label>
@@ -52,12 +54,14 @@ export const Signup = () => {
                 />
                 <label htmlFor="cpf">CPF</label>
                 <input
-                    type="number"
+                    /* type="number" */
                     name="cpf"
                     id="cpf"
                     placeholder="000.000.000-00"
                     value={form.cpf}
                     onChange={onChange}
+                    pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}-?[0-9]{2}"
+                    title="Digite seu CPF com 11 dígitos"
                     required
                 />
                 <label htmlFor="senha">Senha</label>
@@ -68,6 +72,8 @@ export const Signup = () => {
                     placeholder="Mínimo 6 caracteres"
                     value={form.passaword}
                     onChange={onChange}
+                    pattern="^.{6,}$"
+                    title="Mínimo 6 caracteres"
                     required
                 />
                 <label htmlFor="confirmar">Confirmar</label>
@@ -78,6 +84,8 @@ export const Signup = () => {
                     placeholder="Confirme a senha anterior"
                     value={form.confirmar}
                     onChange={onChange}
+                    pattern="^.{6,}$"
+                    title="Mínimo 6 caracteres"
                     required
                 />
                 <button type='submit'>Criar</button>
