@@ -11,18 +11,22 @@ export const Signup = () => {
 
     const [form, onChange, clear] = useForm({ name: "", email: "", cpf: "", password: "" });
 
-    const cadastraUsuario = (event) => {
+    const cadastraUsuario = (event, email, password) => {
         event.preventDefault();
 
-        axios.post(`${BASE_URL}signup`, form)
-            .then((response) => {
-                console.log(response.data);
-                alert("Conta criada com sucesso!")
-            }).catch((e) => {
-                console.log(e.message);
-                alert("E-mail ou CPF já cadastrado!")
-            })
-        clear();
+        if (form.password !== form.password2) {
+            alert("Senha não confere com anterior")
+        } else {
+            axios.post(`${BASE_URL}signup`, form)
+                .then((response) => {
+                    console.log(response.data);
+                    alert("Conta criada com sucesso!")
+                }).catch((e) => {
+                    console.log(e.message);
+                    alert("E-mail ou CPF já cadastrado!")
+                })
+            clear();
+        }
     }
 
     return (
@@ -54,7 +58,6 @@ export const Signup = () => {
                 />
                 <label htmlFor="cpf">CPF</label>
                 <input
-                    /* type="number" */
                     name="cpf"
                     id="cpf"
                     placeholder="000.000.000-00"
@@ -70,19 +73,19 @@ export const Signup = () => {
                     name="password"
                     id="senha"
                     placeholder="Mínimo 6 caracteres"
-                    value={form.passaword}
+                    value={form.password}
                     onChange={onChange}
                     pattern="^.{6,}$"
                     title="Mínimo 6 caracteres"
                     required
                 />
-                <label htmlFor="confirmar">Confirmar</label>
+                <label htmlFor="password2">Confirmar</label>
                 <input
                     type="password"
-                    name="confirmar"
-                    id="confirmar"
+                    name="password2"
+                    id="password2"
                     placeholder="Confirme a senha anterior"
-                    value={form.confirmar}
+                    value={form.password2}
                     onChange={onChange}
                     pattern="^.{6,}$"
                     title="Mínimo 6 caracteres"
