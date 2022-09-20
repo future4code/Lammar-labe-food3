@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToFeed, goToSignUp } from "../../Routes/Coordinator";
+import { goToFeed, goToSignUp } from "../../routes/Coordinator";
 import { useForm } from "../../hooks/useForm/useForm";
 import axios from "axios";
-import Box from "@mui/material/Box";
+/* import Box from "@mui/material/Box"; */
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 
@@ -26,11 +26,12 @@ export const CadastroEndereco = () => {
     axios
       .put(
         "https://us-central1-missao-newton.cloudfunctions.net/rappi4A/address",
-        form, {headers: { auth: localStorage.getItem("token") },
-    })
+        form, {
+        headers: { auth: localStorage.getItem("token") },
+      })
       .then((response) => console.log(response.data))
       .catch((error) => console.log(error.message));
-    
+
   };
   console.log(form);
 
@@ -39,21 +40,21 @@ export const CadastroEndereco = () => {
       <h2>Meu endereço</h2>
       <form onSubmit={cadastro}>
         <div>
-<TextField
+          <TextField
             name={"street"}
             label={"Logradouro"}
             value={form.email}
             onChange={onChange}
-            placeholder="Rua/ Av."    
+            placeholder="Rua/ Av."
             type={"logradouro"}
             required
             variant="outlined"
             fullWidth
-            margin="normal"        
+            margin="normal"
           />
         </div>
         <div>
-<TextField
+          <TextField
             name={"number"}
             label={"Numero"}
             value={form.email}
@@ -63,11 +64,11 @@ export const CadastroEndereco = () => {
             required
             variant="outlined"
             fullWidth
-            margin="normal"        
+            margin="normal"
           />
         </div>
         <div>
-<TextField
+          <TextField
             name={"complement"}
             label={"Complemento"}
             value={form.email}
@@ -76,11 +77,11 @@ export const CadastroEndereco = () => {
             type={"complemento"}
             variant="outlined"
             fullWidth
-            margin="normal"        
+            margin="normal"
           />
         </div>
         <div>
-<TextField
+          <TextField
             name={"neighbourhood"}
             label={"Bairro"}
             value={form.email}
@@ -90,11 +91,11 @@ export const CadastroEndereco = () => {
             required
             variant="outlined"
             fullWidth
-            margin="normal"        
+            margin="normal"
           />
         </div>
         <div>
-<TextField
+          <TextField
             name={"city"}
             label={"Cidade"}
             value={form.email}
@@ -104,11 +105,11 @@ export const CadastroEndereco = () => {
             required
             variant="outlined"
             fullWidth
-            margin="normal"        
+            margin="normal"
           />
         </div>
         <div>
-<TextField
+          <TextField
             name={"state"}
             label={"Estado"}
             value={form.email}
@@ -118,15 +119,15 @@ export const CadastroEndereco = () => {
             required
             variant="outlined"
             fullWidth
-            margin="normal"        
+            margin="normal"
           />
         </div>
-        
-    <Button type="submit" variant="contained" color="error">Salvar</Button>    
-        
-    
+
+        <Button type="submit" variant="contained" color="error">Salvar</Button>
+
+
       </form>
-<br/>
+      <br />
       <button
         onClick={() => {
           goToFeed(navigate);
