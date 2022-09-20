@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToFeed, goToSignUp } from "../../routes/Coordinator";
+import { goToFeed, goToSignUp } from "../../rotas/Coordinator";
 import { useForm } from "../../hooks/useForm/useForm";
 import axios from "axios";
 /* import Box from "@mui/material/Box"; */

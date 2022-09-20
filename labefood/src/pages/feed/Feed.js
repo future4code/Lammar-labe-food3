@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { goToRestaurante } from '../../routes/Coordinator';
+import { goToRestaurante } from '../../rotas/Coordinator';
 
 
 export const Feed = () => {
