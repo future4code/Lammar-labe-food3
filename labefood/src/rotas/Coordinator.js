@@ -22,3 +22,9 @@ export const goToCarrinho = (navigate) => {
 export const goToRestaurante = (navigate) => {
     navigate('/restaurante')
 }
+export const goToEditarCadastro = (navigate) => {
+    navigate('/editar-cadastro')
+}
+export const goToEditarEndereco = (navigate) => {
+    navigate('/editar-endereco')
+}
