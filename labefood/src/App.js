@@ -1,4 +1,4 @@
-import Router from '../src/routes/Router';
+import Router from './rotas/Router';
 import { GlobalStyles } from './GlobalStyles'
 import { GlobalState } from './context/GlobalState';
 

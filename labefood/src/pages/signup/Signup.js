@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../img/Rappi4.svg'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm/useForm';
-import { goToCadastroEndereco } from '../../routes/Coordinator';
+import { goToCadastroEndereco } from '../../rotas/Coordinator';
 import axios from 'axios';
 import { BASE_URL } from '../../constants/constants';
 
