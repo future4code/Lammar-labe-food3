@@ -6,6 +6,7 @@ import axios from "axios";
 /* import Box from "@mui/material/Box"; */
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
+import { BASE_URL } from "../../constants/constants";
 
 export const CadastroEndereco = () => {
   const navigate = useNavigate();
@@ -25,9 +26,9 @@ export const CadastroEndereco = () => {
 
     axios
       .put(
-        "https://us-central1-missao-newton.cloudfunctions.net/rappi4A/address",
+        `${BASE_URL}address`,
         form, {
-        headers: { auth: localStorage.getItem("token") },
+        headers: {auth: localStorage.getItem("token")},     
       })
       .then((response) => console.log(response.data))
       .catch((error) => console.log(error.message));
@@ -43,7 +44,7 @@ export const CadastroEndereco = () => {
           <TextField
             name={"street"}
             label={"Logradouro"}
-            value={form.email}
+            value={form.street}
             onChange={onChange}
             placeholder="Rua/ Av."
             type={"logradouro"}
@@ -57,7 +58,7 @@ export const CadastroEndereco = () => {
           <TextField
             name={"number"}
             label={"Numero"}
-            value={form.email}
+            value={form.number}
             onChange={onChange}
             placeholder="numero"
             type={"numero"}
@@ -71,7 +72,7 @@ export const CadastroEndereco = () => {
           <TextField
             name={"complement"}
             label={"Complemento"}
-            value={form.email}
+            value={form.complement}
             onChange={onChange}
             placeholder="Apto./ Bloco"
             type={"complemento"}
@@ -84,7 +85,7 @@ export const CadastroEndereco = () => {
           <TextField
             name={"neighbourhood"}
             label={"Bairro"}
-            value={form.email}
+            value={form.neighbourhood}
             onChange={onChange}
             placeholder="Bairro"
             type={"bairro"}
@@ -98,7 +99,7 @@ export const CadastroEndereco = () => {
           <TextField
             name={"city"}
             label={"Cidade"}
-            value={form.email}
+            value={form.city}
             onChange={onChange}
             placeholder="Cidade"
             type={"cidade"}
@@ -112,7 +113,7 @@ export const CadastroEndereco = () => {
           <TextField
             name={"state"}
             label={"Estado"}
-            value={form.email}
+            value={form.state}
             onChange={onChange}
             placeholder="Estado"
             type={"estado"}
