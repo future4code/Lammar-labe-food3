@@ -9,6 +9,7 @@ import { Restaurante } from '../pages/restaurante/Restaurante';
 import { MeuPerfil } from '../pages/meu-perfil/MeuPerfil'
 import { EditarCadastro } from '../pages/editar-cadastro/EditarCadastro';
 import { EditarEndereco } from '../pages/editar-endereço/EditarEndereco';
+import { Busca } from '../pages/busca/Busca';
 
 function Router() {
   return (
@@ -23,7 +24,8 @@ function Router() {
             <Route path="/meu-perfil" element={ <MeuPerfil/> }/>
             <Route path="/editar-cadastro" element={ <EditarCadastro/> }/>
             <Route path="/editar-endereco" element={ <EditarEndereco/> }/>
-           
+            <Route path="/busca" element={ <Busca/> }/>
+            
         </Routes>
     </BrowserRouter>
   );

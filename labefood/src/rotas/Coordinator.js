@@ -28,3 +28,5 @@ export const goToEditarCadastro = (navigate) => {
 export const goToEditarEndereco = (navigate) => {
     navigate('/editar-endereco')
 }
+export const goToBusca = (navigate) => {
+    navigate('/busca')}
