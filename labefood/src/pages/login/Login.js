@@ -1,14 +1,31 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { goToSignUp } from '../../rotas/Coordinator';
 import axios from "axios";
 import { useForm } from '../../hooks/useForm/useForm';
 import TextField from '@mui/material/TextField';
 import Rappi4 from "../../img/Rappi4.svg"
+import { useRequestData } from '../../hooks/useRequestData/useRequestData';
+import { BASE_URL } from "../../constants/constants";
+
 
 export const Login = () => {
   const navigate = useNavigate()
   const [form, onChange, clear] = useForm({ email: "", password: "" });
+
+  const [isLoading, setIsLoading] = useRequestData(
+    `${BASE_URL}`
+  );
+  const [loading, setLoading] = useState(undefined);
+
+
+useEffect(()=>{ 
+  // setLoading(true) 
+   setTimeout(() => {
+    setLoading(false)
+  }, 5000);
+})
+
 
     const loginStart = (event) => {
         event.preventDefault();
@@ -28,6 +45,10 @@ export const Login = () => {
 
     return (
         <div>
+          <div>
+          {setIsLoading &&  "...Carregando!!! ...."}
+          </div>
+
             <img src={Rappi4} alt="logo-Rappi4"/>
             <h2>Login</h2>
            
