@@ -6,7 +6,7 @@ import { useForm } from "../../hooks/useForm/useForm";
 import TextField from "@mui/material/TextField";
 import Rappi4 from "../../img/Rappi4.svg";
 import { SplashScreen } from "../../components/splashScreen/SplashScreen";
-
+import { Clique, Div } from "./Style";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -39,51 +39,56 @@ export const Login = () => {
 
   return (
     <div>
-     
-     {loading ? <SplashScreen />:
-   <div>
-      <img src={Rappi4} alt="logo-Rappi4" />
+      {loading ? (
+        <SplashScreen />
+      ) : (
+        <div>
+          <img src={Rappi4} alt="logo-Rappi4" />
 
-      <h2>Login</h2>
+          <h2>Entrar</h2>
 
-      <form onSubmit={loginStart}>
-        <TextField
-          name={"email"}
-          label={"E-mail"}
-          value={form.email}
-          onChange={onChange}
-          placeholder="E-mail"
-          type={"email"}
-          required
-          variant="outlined"
-          fullWidth
-          margin="normal"
-        />
-        <br />
-        <TextField
-          name={"password"}
-          label="Senha"
-          value={form.password}
-          onChange={onChange}
-          placeholder="Senha"
-          type="password"
-          required
-          pattern={"^.{6,}"}
-          title={"A senha deve ter no mínimo 6 caracteres"}
-          variant="outlined"
-          fullWidth
-          margin="normal"
-        />
-        <button type="submit">Entrar</button>{" "}
-        <button
-          onClick={() => {
-            goToSignUp(navigate);
-          }}
-        >
-          Cadastrar
-        </button>
-      </form>
-      </div>}
+          <form onSubmit={loginStart}>
+            <TextField
+              name={"email"}
+              label={"E-mail"}
+              value={form.email}
+              onChange={onChange}
+              placeholder="E-mail"
+              type={"email"}
+              required
+              variant="outlined"
+              fullWidth
+              margin="normal"
+            />
+            <br />
+            <TextField
+              name={"password"}
+              label="Senha"
+              value={form.password}
+              onChange={onChange}
+              placeholder="Senha"
+              type="password"
+              required
+              pattern={"^.{6,}"}
+              title={"A senha deve ter no mínimo 6 caracteres"}
+              variant="outlined"
+              fullWidth
+              margin="normal"
+            />
+            <button type="submit">Entrar</button>{" "}
+            <Div>
+              <p>Não possui cadastro?</p>
+              <Clique
+                onClick={() => {
+                  goToSignUp(navigate);
+                }}
+              >
+                Clique aqui.
+              </Clique>
+            </Div>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
