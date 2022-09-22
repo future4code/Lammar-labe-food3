@@ -8,7 +8,7 @@ export const FiltersForSeach = (props) => {
     return (
         <input
         type={"text"}
-        placeholder="Pesquisar"
+        placeholder="Restaurante"
         value={props.inputSearch}
         onChange={onChangeName}
       />
