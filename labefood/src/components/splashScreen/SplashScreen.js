@@ -1,5 +1,5 @@
 import React from "react";
-import Screen from "../../../img/SplashScreen.png";
+import Screen from "../../img/SplashScreen.png";
 import styled from "styled-components";
 
 export const LoaderImg = styled.img`
