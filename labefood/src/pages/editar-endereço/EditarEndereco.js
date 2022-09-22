@@ -44,9 +44,9 @@ export const EditarEndereco = () => {
         <label htmlFor="logradouro">Logradouro: </label>
         <input
           type="text"
-          name="logradouro"
+          name="street"
           id="street"
-          placeholder="Logradouro"
+          placeholder="Rua/ Av."
           value={form.street}
           onChange={onChange}
           required
@@ -54,7 +54,7 @@ export const EditarEndereco = () => {
         <label htmlFor="numero">Número: </label>
         <input
           type="number"
-          name="numero"
+          name="number"
           id="number"
           placeholder="Número"
           value={form.number}
@@ -63,7 +63,8 @@ export const EditarEndereco = () => {
         ></input>
         <label htmlFor="complement">Complemento: </label>
         <input
-          name="complemento"
+          type="text"
+          name="complement"
           id="complement"
           placeholder="Complemento"
           value={form.complement}
@@ -71,7 +72,7 @@ export const EditarEndereco = () => {
         ></input>
         <label htmlFor="neighbourhood">Bairro: </label>
         <input
-          name="bairro"
+          name="neighbourhood"
           id="neighbourhood"
           placeholder="Bairro"
           value={form.neighbourhood}
@@ -80,7 +81,7 @@ export const EditarEndereco = () => {
         ></input>
         <label htmlFor="city">Cidade: </label>
         <input
-          name="cidade"
+          name="city"
           id="city"
           placeholder="Cidade"
           value={form.city}
@@ -89,7 +90,7 @@ export const EditarEndereco = () => {
         ></input>
         <label htmlFor="state">Estado: </label>
         <input
-          name="estado"
+          name="state"
           id="state"
           placeholder="Estado"
           value={form.state}
