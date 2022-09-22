@@ -1,11 +1,16 @@
 import React from "react";
 
-export const Filters = (nameFilter,setNameFilter) => {
+export const FiltersForSeach = (props) => {
+  const onChangeName =(event) =>{
+    props.setInputSearch(event.target.value);
+  };
+  
     return (
         <input
+        type={"text"}
         placeholder="Pesquisar"
-        value={nameFilter}
-        onChange={(ev) => {setNameFilter(ev.target.value)}}
+        value={props.inputSearch}
+        onChange={onChangeName}
       />
         
     )
