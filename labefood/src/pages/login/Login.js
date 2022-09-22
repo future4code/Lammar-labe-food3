@@ -5,7 +5,7 @@ import axios from "axios";
 import { useForm } from "../../hooks/useForm/useForm";
 import TextField from "@mui/material/TextField";
 import Rappi4 from "../../img/Rappi4.svg";
-import { SplashScreen } from "../../components/filters/splashScreen/SplashScreen";
+import { SplashScreen } from "../../components/splashScreen/SplashScreen";
 
 
 export const Login = () => {
