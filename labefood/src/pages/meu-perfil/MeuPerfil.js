@@ -5,43 +5,64 @@ import { goToEditarEndereco } from '../../rotas/Coordinator';
 import axios from 'axios';
 import { BASE_URL } from '../../constants/constants';
 import { useEffect, useState } from 'react';
+import { useProtectedPage } from '../../hooks/useProtectedPage/useProtected';
+import {  Tela, Rectangle, Endereco } from './styled';
+
 
 export const MeuPerfil = () => {
     const navigate = useNavigate()
 
-    const [informacoes, setInformacoes] = useState([]);
+    useProtectedPage()
 
-    useEffect (() => {
-        listaInformacoes()
-        .then(infos => {
-            setInformacoes(infos);
-        })
-        .catch((e) => {
-            console.log(e)
-        })
+    const [informacoes, setInformacoes] = useState({});
 
+        const getInfos = () => { 
+        axios
+          .get(`${BASE_URL}profile`, {
+            headers: { auth: localStorage.getItem("token") },
+          })
+          .then((response) => {
+            setInformacoes(response.data.user);
+          })
+          .catch((error) => console.log(error.message));
+      }; 
+
+    useEffect(() => {
+        getInfos()
     }, [])
 
-    const listaInformacoes = async () => {
-        const {infos} = await axios.get(`${BASE_URL}profile`,
-        {
-            headers: {
-                Authorization: localStorage.getItem("token")                
-            }
-        }    
-           
-        );
-        return infos
-    }
+    const [pedidos, setPedidos] = useState({});
+
+    const historicoDePedidos = () => { 
+        axios
+          .get(`${BASE_URL}orders/history`, {
+            headers: { auth: localStorage.getItem("token")},
+          })
+          .then((response) => {
+            setPedidos(response.data);
+          })
+          .catch((error) => console.log(error.message));
+      }; 
+
+    useEffect(() => {
+        historicoDePedidos()
+    }, [])
+
+
 
     return (
-        <div>
+        <Tela>
             <h2>Meu Perfil</h2>
-            {informacoes.slice(0,20).map((informacao, i) => JSON.stringify(informacao)) }
-            <button onClick={() => {goToEditarCadastro(navigate)}}> Editar Cadastro </button>
-            <button onClick={() => {goToEditarEndereco(navigate)}}> Editar Endereço </button>
-        </div>
+                <img src="https://cdn.zeplin.io/5dd5ae92669af1bc817c8359/assets/CC94162C-8ED7-463F-A334-C9DEFFBA9211.svg" alt="ícone de alteração" onClick={() => {goToEditarCadastro(navigate)}} /> 
+                <p> {informacoes && informacoes.name} </p>
+                <p> {informacoes && informacoes.email} </p>
+                <p> {informacoes && informacoes.cpf} </p>               
+                    <Rectangle>
+                        <Endereco> Endereço Cadastrado </Endereco>                  
+                        <p> {informacoes && informacoes.address} </p>      
+                        <img src="https://cdn.zeplin.io/5dd5ae92669af1bc817c8359/assets/CC94162C-8ED7-463F-A334-C9DEFFBA9211.svg" alt="ícone de alteração" onClick={() => {goToEditarEndereco(navigate)}}/>   
+                    </Rectangle>              
+            <h3>Histórico de Pedidos</h3>
+        </Tela>
     )
-
-
 }
