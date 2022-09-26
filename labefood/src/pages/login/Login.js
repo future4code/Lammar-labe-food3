@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { goToSignUp } from "../../rotas/Coordinator";
 import axios from "axios";
 import { useForm } from "../../hooks/useForm/useForm";
-import TextField from "@mui/material/TextField";
+/* import TextField from "@mui/material/TextField"; */
 import Rappi4 from "../../img/Rappi4.svg";
 import { SplashScreen } from "../../components/splashScreen/SplashScreen";
 import { Clique, Div } from "./Style";
@@ -48,7 +48,7 @@ export const Login = () => {
           <h2>Entrar</h2>
 
           <form onSubmit={loginStart}>
-            <TextField
+            <input
               name={"email"}
               label={"E-mail"}
               value={form.email}
@@ -56,12 +56,12 @@ export const Login = () => {
               placeholder="E-mail"
               type={"email"}
               required
-              variant="outlined"
+            /*   variant="outlined"
               fullWidth
-              margin="normal"
+              margin="normal" */
             />
             <br />
-            <TextField
+            <input
               name={"password"}
               label="Senha"
               value={form.password}
@@ -71,9 +71,9 @@ export const Login = () => {
               required
               pattern={"^.{6,}"}
               title={"A senha deve ter no mínimo 6 caracteres"}
-              variant="outlined"
+            /*   variant="outlined"
               fullWidth
-              margin="normal"
+              margin="normal" */
             />
             <button type="submit">Entrar</button>{" "}
             <Div>
