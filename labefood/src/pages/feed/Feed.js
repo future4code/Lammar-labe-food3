@@ -22,7 +22,7 @@ export const Feed = () => {
         },
       })
       .then((res) => {
-        console.log(filterRestaurants);
+        // console.log(filterRestaurants);
         setdata(res.data.restaurants);
         setisLoading(false);
       })
@@ -54,11 +54,14 @@ export const Feed = () => {
     filterRestaurants &&
     filterRestaurants.map((loja) => {
       return (
-        <div>
-          <p key={loja.id} loja={loja}>
-            {" "}
+        <div key={loja.id} loja={loja}>
+           <img src={loja.logoUrl}/>
+          <p>
             {loja.name}
           </p>
+          <p>Tempo de espera:  {loja.deliveryTime} min.</p>
+          <p>Frete: {loja.shipping}</p>
+          
         </div>
       );
     });
