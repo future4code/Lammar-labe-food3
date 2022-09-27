@@ -4,8 +4,8 @@ import { goToFeed, goToSignUp } from "../../rotas/Coordinator";
 import { useForm } from "../../hooks/useForm/useForm";
 import axios from "axios";
 /* import Box from "@mui/material/Box"; */
-import TextField from "@mui/material/TextField";
-import Button from '@mui/material/Button';
+/* import TextField from "@mui/material/TextField"; */
+/* import Button from '@mui/material/Button'; */
 import { BASE_URL } from "../../constants/constants";
 
 export const CadastroEndereco = () => {
@@ -28,7 +28,7 @@ export const CadastroEndereco = () => {
       .put(
         `${BASE_URL}address`,
         form, {
-        headers: {auth: localStorage.getItem("token")},     
+        headers: { auth: localStorage.getItem("token") },
       })
       .then((response) => console.log(response.data))
       .catch((error) => console.log(error.message));
@@ -41,7 +41,7 @@ export const CadastroEndereco = () => {
       <h2>Meu endereço</h2>
       <form onSubmit={cadastro}>
         <div>
-          <TextField
+          <input
             name={"street"}
             label={"Logradouro"}
             value={form.street}
@@ -49,13 +49,13 @@ export const CadastroEndereco = () => {
             placeholder="Rua/ Av."
             type={"logradouro"}
             required
-            variant="outlined"
+          /*   variant="outlined"
             fullWidth
-            margin="normal"
+            margin="normal" */
           />
         </div>
         <div>
-          <TextField
+          <input
             name={"number"}
             label={"Numero"}
             value={form.number}
@@ -63,26 +63,26 @@ export const CadastroEndereco = () => {
             placeholder="numero"
             type={"numero"}
             required
-            variant="outlined"
-            fullWidth
-            margin="normal"
+          /*  variant="outlined"
+           fullWidth
+           margin="normal" */
           />
         </div>
         <div>
-          <TextField
+          <input
             name={"complement"}
             label={"Complemento"}
             value={form.complement}
             onChange={onChange}
             placeholder="Apto./ Bloco"
             type={"complemento"}
-            variant="outlined"
-            fullWidth
-            margin="normal"
+          /* variant="outlined"
+          fullWidth
+          margin="normal" */
           />
         </div>
         <div>
-          <TextField
+          <input
             name={"neighbourhood"}
             label={"Bairro"}
             value={form.neighbourhood}
@@ -90,13 +90,13 @@ export const CadastroEndereco = () => {
             placeholder="Bairro"
             type={"bairro"}
             required
-            variant="outlined"
-            fullWidth
-            margin="normal"
+          /*  variant="outlined"
+           fullWidth
+           margin="normal" */
           />
         </div>
         <div>
-          <TextField
+          <input
             name={"city"}
             label={"Cidade"}
             value={form.city}
@@ -104,13 +104,13 @@ export const CadastroEndereco = () => {
             placeholder="Cidade"
             type={"cidade"}
             required
-            variant="outlined"
-            fullWidth
-            margin="normal"
+          /*    variant="outlined"
+             fullWidth
+             margin="normal" */
           />
         </div>
         <div>
-          <TextField
+          <input
             name={"state"}
             label={"Estado"}
             value={form.state}
@@ -118,13 +118,13 @@ export const CadastroEndereco = () => {
             placeholder="Estado"
             type={"estado"}
             required
-            variant="outlined"
-            fullWidth
-            margin="normal"
+          /*  variant="outlined"
+           fullWidth
+           margin="normal" */
           />
         </div>
 
-        <Button type="submit" variant="contained" color="error">Salvar</Button>
+        <button type="submit" variant="contained" color="error">Salvar</button>
 
 
       </form>
