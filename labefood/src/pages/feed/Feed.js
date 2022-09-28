@@ -1,4 +1,4 @@
-import { goToRestaurante } from "../../rotas/Coordinator";
+import { goToEditarCadastro, goToFeed, goToRestaurante } from "../../rotas/Coordinator";
 import React, { useEffect,useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/constants'
@@ -22,7 +22,6 @@ export const Feed = () => {
         },
       })
       .then((res) => {
-        // console.log(filterRestaurants);
         setdata(res.data.restaurants);
         setisLoading(false);
       })
@@ -35,19 +34,40 @@ export const Feed = () => {
             navigate("/cadastro-endereco");
         }
       });
-  }, [navigate, inputSearch]);
+  }, [navigate, inputSearch, category]);
 
   const filterRestaurants =
     data &&
     data.filter((item) => {
       if (inputSearch !== "") {
-        return item.name.toLowerCase().includes(inputSearch.toLowerCase());
-      } else if (category !== "") {
-        return category === item.category;
-      }
+        return item.name.toLowerCase().includes(inputSearch.toLowerCase());}
        else {
         return item;
       }
+    });
+// Filtro de tipos em andamento.
+    const filterRestaurantsType =
+    data &&
+    data.filter((item) => {
+      if (category !== "") {
+        return item.category}
+       else {
+        return item;
+      }
+    });
+console.log(filterRestaurantsType)
+
+    const listCategory =
+    filterRestaurants &&
+    filterRestaurants.map((loja) => {
+      return (
+        <div key={loja.id} loja={loja}>
+          <button
+          onClick={setCategory}> 
+            {loja.category}
+          </button>
+        </div>
+      );
     });
 
   const listRestaurant =
@@ -61,7 +81,6 @@ export const Feed = () => {
           </p>
           <p>Tempo de espera:  {loja.deliveryTime} min.</p>
           <p>Frete: {loja.shipping}</p>
-          
         </div>
       );
     });
@@ -73,6 +92,7 @@ export const Feed = () => {
         inputSearch={inputSearch}
         setInputSearch={setInputSearch}
       />
+      <div>{listCategory}</div>
       <div>
         {isLoading && "loading..."}
         {!isLoading && data && listRestaurant}
