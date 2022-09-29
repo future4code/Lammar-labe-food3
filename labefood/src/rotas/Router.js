@@ -20,7 +20,7 @@ function Router() {
             <Route path="/cadastro-endereco" element={ <CadastroEndereco/> }/>
             <Route path="/feed" element={ <Feed/> }/>
             <Route path="/carrinho" element={ <MeuCarrinho/> }/>
-            <Route path="/restaurante" element={ <Restaurante/> }/>
+            <Route path="/restaurante/:id" element={ <Restaurante/> }/>
             <Route path="/meu-perfil" element={ <MeuPerfil/> }/>
             <Route path="/editar-cadastro" element={ <EditarCadastro/> }/>
             <Route path="/editar-endereco" element={ <EditarEndereco/> }/>

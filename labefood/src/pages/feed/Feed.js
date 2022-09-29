@@ -74,7 +74,11 @@ console.log(filterRestaurantsType)
     filterRestaurants &&
     filterRestaurants.map((loja) => {
       return (
-        <div key={loja.id} loja={loja}>
+        
+      <div key={loja.id} loja={loja}
+        onClick={() => {
+          goToRestaurante(navigate, loja.id);
+        }}>
            <img src={loja.logoUrl}/>
           <p>
             {loja.name}
