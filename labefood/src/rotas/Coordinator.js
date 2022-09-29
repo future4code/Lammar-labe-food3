@@ -19,8 +19,8 @@ export const goToPedidoEmAndamento = (navigate) => {
 export const goToCarrinho = (navigate) => {
     navigate('/carrinho')
 }
-export const goToRestaurante = (navigate) => {
-    navigate('/restaurante')
+export const goToRestaurante = (navigate, id) => {
+    navigate(`/restaurante/${id}`)
 }
 export const goToEditarCadastro = (navigate) => {
     navigate('/editar-cadastro')
