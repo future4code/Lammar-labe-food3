@@ -45,17 +45,20 @@ export const Feed = () => {
         return item;
       }
     });
+
+// Tentar fazer a mesma logica da pagina restaurante, com filter com if e else no .category
+
 // Filtro de tipos em andamento.
-    const filterRestaurantsType =
-    data &&
-    data.filter((item) => {
-      if (category !== "") {
-        return item.category}
-       else {
-        return item;
-      }
-    });
-console.log(filterRestaurantsType)
+//     const filterRestaurantsType =
+//     data &&
+//     data.filter((item) => {
+//       if (category !== "") {
+//         return item.category}
+//        else {
+//         return item;
+//       }
+//     });
+// console.log(filterRestaurantsType)
 
     const listCategory =
     filterRestaurants &&
@@ -70,7 +73,7 @@ console.log(filterRestaurantsType)
       );
     });
 
-  const listRestaurant =
+ const listRestaurant =
     filterRestaurants &&
     filterRestaurants.map((loja) => {
       return (
