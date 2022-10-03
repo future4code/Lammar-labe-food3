@@ -28,6 +28,14 @@ Contém as seguintes páginas:
 
 ![Signup2](https://user-images.githubusercontent.com/100722211/193490719-082645a6-e5e5-405d-956e-df95238f7046.png)
 
+![image](https://user-images.githubusercontent.com/102561587/193491989-0ffa10ae-a359-4911-b31d-13ee8ab07733.png)
+
+![image](https://user-images.githubusercontent.com/102561587/193492254-cdcf07a1-86e5-4d7b-bf25-e1bba7b08fea.png)
+
+![image](https://user-images.githubusercontent.com/102561587/193492309-20bfc235-90eb-4c1f-addb-7f698d57f076.png)
+
+
+
 
 <h2>
     <br>
