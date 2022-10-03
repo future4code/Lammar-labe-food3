@@ -24,10 +24,15 @@ Contém as seguintes páginas:
     <p style="color: #D30404; font-weight: bold;"> 📸 Prints das Telas</p>
 </h2>
 
+![Login](https://user-images.githubusercontent.com/100722211/193490712-58d5fae4-813d-4e55-9e30-dc8a7d70ea7e.png)
+
+![Signup2](https://user-images.githubusercontent.com/100722211/193490719-082645a6-e5e5-405d-956e-df95238f7046.png)
+
 
 <h2>
     <br>
     <p style="color: #D30404; font-weight: bold;">🔗 Link do Surge</p>
+    https://blue-button.surge.sh/
 </h2>
 
 
@@ -42,6 +47,7 @@ Contém as seguintes páginas:
 <!-- css -->
 <img witdh="40px" height="40px" src="https://user-images.githubusercontent.com/98292838/163856432-c20873d2-9b31-412e-92e9-a1f6c609b40c.png">
 <!-- javascript -->
+<img witdh="40px" height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
 </p>
 
 <h2>
